@@ -1,0 +1,4 @@
+spec
+http://coursera.cs.princeton.edu/algs4/assignments/percolation.html
+checklists
+http://coursera.cs.princeton.edu/algs4/checklists/percolation.html
