@@ -13,7 +13,7 @@ public class Percolation
     public Percolation(int n)
     {
         if (n <= 0)
-            throw new java.lang.IndexOutOfBoundsException("n must be an integer larger than 0");
+            throw new java.lang.IllegalArgumentException("n must be an integer larger than 0");
         
         gridSize = n;
         bottom = gridSize * gridSize + 1;
