@@ -1,12 +1,14 @@
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 
 public class Percolation
 {
-    private boolean[][] opened;
-    private int gridSize = 0;
-    private int openSites = 0;
-    private int top = 0; //virtual site to represent the top site of the grid
-    private int bottom = 0; //virtual site to represent the bottom node
+    private boolean[][] opened;    //array to hold the open/close status for each site
+    private int gridSize;               //the edge of the grid
+    private int openSites = 0;      //total numbers of open sites
+    private int top = 0;                //virtual site to represent the top site of the grid
+    private int bottom;                //virtual site to represent the bottom node
     private WeightedQuickUnionUF wqf;
     
     //create n-by-n grid, all blocked
@@ -82,6 +84,7 @@ public class Percolation
             return false;
     }
     
+    //return total numbers of open sites
     public int numberOfOpenSites()
     {
         return openSites;
@@ -101,16 +104,33 @@ public class Percolation
         return gridSize*(row-1)+col;
     }
     
+    //helper function to check the boundary
     private void checkBoundary(int row, int col)
     {
         if (row < 1 || row > gridSize)
-            throw new java.lang.IndexOutOfBoundsException("row index out of bound");
+            throw new java.lang.IndexOutOfBoundsException("row index " + row + " is out of bound");
         if (col < 1 || col > gridSize)
-            throw new java.lang.IndexOutOfBoundsException("column index out of bound");
+            throw new java.lang.IndexOutOfBoundsException("column index " + col + " is out of bound");
     }
     
     public static void main(String[] args)
     {
+        int n = StdIn.readInt();
+        Percolation system = new Percolation(n);
         
+        while (!StdIn.isEmpty()) {
+            int row = StdIn.readInt();
+            int col = StdIn.readInt();
+            
+            if (!system.isOpen(row, col))
+            {
+                system.open(row, col);
+            }
+        }
+        
+        if (system.percolates())
+            StdOut.println("percolates");
+        else
+            StdOut.println("not percolates");
     }
 }
