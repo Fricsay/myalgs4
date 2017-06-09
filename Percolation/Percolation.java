@@ -40,11 +40,14 @@ public class Percolation
             wqf.union(top, getSiteIndex(row, col));
         }
         
+        /*************************************************
+        //this would cause back wash
         if (row == gridSize)
         {//bottom row, must link to the virtual bottom site
             wqf.union(bottom, getSiteIndex(row, col));
         }
-
+        *************************************************/
+        
         if (row > 1 && isOpen(row-1, col))
         {//link the upper site if it is opened
             wqf.union(getSiteIndex(row, col), getSiteIndex(row-1, col));
@@ -93,6 +96,17 @@ public class Percolation
     //check if the system is percolated
     public boolean percolates()
     {
+        //This to prevent the backwash issue
+        //We union the bottom only if the bottom site is a Full site 
+        for (int j = 1; j <= gridSize; j++)
+        {
+            //skip block sites to save some time
+            if(isOpen(gridSize, j) && isFull(gridSize, j))
+            {
+                 wqf.union(bottom, getSiteIndex(gridSize, j));
+            }
+        }
+        
         return wqf.connected(top, bottom);
     }
     
