@@ -40,13 +40,14 @@ public class Percolation
             wqf.union(top, getSiteIndex(row, col));
         }
         
-        /*************************************************
-        //this would cause back wash
+        /***********************************************************
+        //this would cause backwash described in the checklists.
+        //This won't impact the final result but the visual result.
         if (row == gridSize)
         {//bottom row, must link to the virtual bottom site
             wqf.union(bottom, getSiteIndex(row, col));
         }
-        *************************************************/
+        ***********************************************************/
         
         if (row > 1 && isOpen(row-1, col))
         {//link the upper site if it is opened
