@@ -5,10 +5,10 @@ import edu.princeton.cs.algs4.StdOut;
 public class Percolation
 {
     private boolean[][] opened;    //array to hold the open/close status for each site
-    private int gridSize;               //the edge of the grid
-    private int openSites = 0;      //total numbers of open sites
-    private int top = 0;                //virtual site to represent the top site of the grid
-    private int bottom;                //virtual site to represent the bottom node
+    private int gridSize;          //the edge of the grid
+    private int openSites = 0;     //total numbers of open sites
+    private int top = 0;           //virtual site to represent the top site of the grid
+    private int bottom;            //virtual site to represent the bottom node
     private WeightedQuickUnionUF wqf;
     
     //create n-by-n grid, all blocked
