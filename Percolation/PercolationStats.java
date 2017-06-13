@@ -84,7 +84,8 @@ public class PercolationStats
     {
         /*Stopwatch time = new Stopwatch();*/
         
-        //We should check if the input is actually the integer
+        //We should check if the input is actually an integer
+        //but java is going to throw the exception anyway
         int N = Integer.parseInt(args[0]);
         int T = Integer.parseInt(args[1]);
         
