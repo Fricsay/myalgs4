@@ -5,11 +5,11 @@ import edu.princeton.cs.algs4.StdStats;
 
 public class PercolationStats
 {
-    private int trials;                 //hoe many trials to be run for the Monte Carlo Simulation
-    private int gridSize;            //the edge of the grid
+    private int trials;          //hoe many trials to be run for the Monte Carlo Simulation
+    private int gridSize;        //the edge of the grid
     private Percolation perco;   //percolation system
-    private int run = 0;             //How many runs are done
-    private double threshold[]; //array to hold the threshold value for each Monte Carlo Simulation 
+    private int run = 0;         //How many runs are done
+    private double threshold[];  //array to hold the threshold value for each Monte Carlo Simulation 
         
     //create n-by-n grid percolation system and run Monte Carlo Simulation
     public PercolationStats(int n, int t)
@@ -84,6 +84,7 @@ public class PercolationStats
     {
         /*Stopwatch time = new Stopwatch();*/
         
+        //We should check if the input is actually the integer
         int N = Integer.parseInt(args[0]);
         int T = Integer.parseInt(args[1]);
         
