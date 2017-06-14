@@ -2,3 +2,9 @@ spec
 http://coursera.cs.princeton.edu/algs4/assignments/percolation.html
 checklists
 http://coursera.cs.princeton.edu/algs4/checklists/percolation.html
+
+To solve the backwash issue we need to use two WQUUF object to save redundant data, which seems to me a waste. Here are some ideas for improvement.
+
+TODO:
+https://www.sigmainfy.com/blog/avoid-backwash-in-percolation.html
+https://www.cs.princeton.edu/courses/archive/fall10/cos226/precepts/15UnionFind-Tarjan.pdf
