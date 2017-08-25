@@ -1,4 +1,6 @@
-To solve the backwash issue we need to use two WQUUF object to save redundant data, which seems to me a waste. Here are some ideas for improvement.
+To solve the backwash issue we need to use two WQUUF object to save redundant data, which seems to me a waste. 
+
+Here are some ideas for improvement.
 
 TODO:
 https://www.sigmainfy.com/blog/avoid-backwash-in-percolation.html
